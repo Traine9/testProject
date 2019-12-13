@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/composer" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-text-template" />
+    </include_path>
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+</project>

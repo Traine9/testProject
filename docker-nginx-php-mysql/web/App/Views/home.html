@@ -1,0 +1,59 @@
+{% extends "base/header.html" %}
+
+
+{% block title %} {{ title }} {% endblock %}
+
+
+{% block body %}
+    <div class="col s12 m8 l9">
+        <!-- Dropdown Structure -->
+        <nav class="teal">
+            <div class="nav-wrapper">
+                <div id="title" class="col s12">
+                    <a href="/" class="brand-logo">  {{ title }} </a>
+                    <ul id="header_menu" class="right hide-on-med-and-down">
+
+                        {% if language=="en" %}
+
+                          {% if auth %}
+                            <li class="waves-effect waves-block waves-light translation-button"> <a href="auth/logout"> Logout </a></li>
+                          {% else %}
+                            <li class="waves-effect waves-block waves-light translation-button"> <a href="auth"> Login </a></li>
+                          {% endif %}
+
+                          <li class="uppercase waves-effect waves-block waves-light translation-button">
+                            <form method="post" action="language">
+                              <input name="language" type="submit" value="ru">
+                            </form>
+                          </li>
+                        {% elseif language=="ru" %}
+
+                          {% if auth %}
+                            <li class="waves-effect waves-block waves-light translation-button"> <a href="auth/logout"> Выход </a></li>
+                          {% else %}
+                            <li class="waves-effect waves-block waves-light translation-button"> <a href="auth"> Вход </a></li>
+                          {% endif %}
+
+                          <li class="uppercase waves-effect waves-block waves-light translation-button">
+                            <form method="post" action="language">
+                              <input name="language" type="submit" value="en">
+                            </form>
+                          </li>
+                        {% else %}
+
+                          <li class="uppercase waves-effect waves-block waves-light translation-button">
+                            <form method="post" action="language">
+                              <input name="language" type="submit" value="ru">
+                            </form>
+                          </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+    <h2 class="center">{{ message }} {% if auth %} {{ auth }} {% endif %}</h2>
+
+{% endblock %}

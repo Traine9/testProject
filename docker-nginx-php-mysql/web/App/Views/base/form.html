@@ -1,0 +1,39 @@
+{% macro form(action='', method='', class="login-form" ) -%}
+   <form action="{{ action }}" method="{{ method }}" class="{{ class }}">
+{% endmacro %}
+
+{% macro input(type='',
+               label='',
+               value='',
+               name='',
+               id='',
+               for='',
+               icon_font='',
+               icon_style='',
+               position='prefix',
+               class="", sub_class="", label_class="", input_class=''
+               ) -%}
+
+<div class="{{ class }}">
+   <div class="{{ sub_class }}">
+     <i class="material-icons {{ position }}" style="margin-top: 10px; {{ icon_style }}"> {{ icon_font }} </i>
+      <input type="{{ type }}" name="{{ name }}" id="{{ id }}" class="{{ input_class }}" value="{{ value }}">
+      <label for="{{ for }}" class="{{ label_class }} ">{{ label }}</label>
+   </div>
+</div>
+{%- endmacro %}
+
+
+{% macro button(id='',
+                class='',
+                name='',
+                icon_font='',
+                position='',
+                label=''
+               ) %}
+
+        <button id="{{ id }}" class="{{ class }}" name="{{ name }}"> {{ label }}
+          <i class="material-icons {{ position }}"> {{ icon_font }} </i>
+        </button>
+
+{% endmacro %}

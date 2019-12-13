@@ -1,0 +1,100 @@
+#title{
+    margin-left: 60px;
+}
+
+#header_menu{
+    margin-right: 60px;
+}
+
+#header_menu > li {
+    padding: 20px;
+}
+
+#btn_create{
+    margin-bottom: 20px;
+    margin-top: 14px;
+    margin-right: 11px;
+    display: flex;
+    float: right;
+}
+
+#btn_cancel{
+    margin-top: 14px;
+    margin-left: 10px;
+}
+
+#btn_result{
+    display: flex;
+    margin-bottom: -15px;
+    float: left;
+    margin-top: 91px;
+    margin-left: -224px;
+}
+
+body
+{
+    background: #f5f5f5;
+}
+
+h5
+{
+    font-weight: 400;
+}
+
+.container
+{
+    margin-top: 80px;
+    width: 400px;
+    height: 700px;
+}
+
+.tabs .indicator
+{
+    background-color: #e0f2f1;
+    height: 60px;
+    opacity: 0.3;
+}
+
+.form-container
+{
+    padding: 40px;
+    padding-top: 10px;
+}
+
+.confirmation-tabs-btn
+{
+    position: absolute;
+}
+
+#auth{
+    width: 500px;
+    height: auto;
+    margin-top: 2%;
+}
+
+#auth > ul{
+    width: 501px !important;
+    margin-left: -8px;
+}
+
+.file_input_div {
+    margin: auto;
+}
+
+.file_input {
+    float: left;
+}
+
+#file_input_text_div {
+    width: 370px;
+    margin-top: -8px;
+    margin-left: 5px;
+}
+
+.none {
+    display: none;
+}
+
+#browser-window{
+    width: 670px !important;
+}

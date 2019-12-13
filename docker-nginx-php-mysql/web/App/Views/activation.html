@@ -1,0 +1,37 @@
+{% extends "base/header.html" %}
+
+
+{% block title %} {{ title }} {% endblock %}
+
+
+{% block body %}
+<div class="col s12 m8 l9">
+    <!-- Dropdown Structure -->
+    <nav class="teal">
+        <div class="nav-wrapper">
+            <div id="title" class="col s12">
+                <a href="/" class="brand-logo">  {{ title }} </a>
+                <ul id="header_menu" class="right hide-on-med-and-down">
+                    <li class="bold"> <a class="waves-effect waves-cyan" href="/auth"> Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="center">
+    <h2> {{ auth }} </h2>
+    <hr>
+    <h2> {{ message }} </h2>
+    <hr>
+    {% if home %}
+        <a class="waves-effect waves-light btn gradient-45deg-green-teal gradient-shadow" href="/"> {{ home }} </a>
+    {% endif %}
+
+
+
+
+
+</div>
+
+{% endblock %}

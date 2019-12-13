@@ -1,0 +1,40 @@
+{% extends "base/header.html" %}
+
+
+{% block head %}
+  <link href="/css/layouts/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+{% endblock %}
+
+{% block body %}
+<body class="cyan">
+  <div id="error-page">
+    <div class="center">
+      <div class="col s12">
+        <div id="browser-window" class="browser-window">
+          <div class="top-bar">
+            <div class="circles">
+              <div id="close-circle" class="circle"></div>
+              <div id="minimize-circle" class="circle"></div>
+              <div id="maximize-circle" class="circle"></div>
+            </div>
+          </div>
+          <div class="content">
+            <div class="row">
+              <div id="site-layout-example-top" class="col s12">
+                <p class="flat-text-logo center white-text ">
+                  {% block description %}{% endblock %} ☹ <br>
+                  {% block error_in %}{% endblock %}
+                </p>
+              </div>
+              <div id="site-layout-example-right" class="col s12 m12 l12">
+                <div class="row center">
+                  <h1 class="text-long-shadow col s12">{% block number %}{% endblock %}</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
