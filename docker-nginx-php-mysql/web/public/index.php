@@ -24,13 +24,12 @@ set_exception_handler('Core\Error::exceptionHandler');
 $router = new Core\Router();
 
 // Add the routes
-$router->add('', ['controller' => 'Home', 'action' => 'index']);
-
+$router->add('/', ['controller' => 'Home', 'action' => 'index']);
 # Toggle language
-$router->add('auth', ['controller' => 'Auth', 'action' => 'index']);
-$router->add('auth/activate', ['controller' => 'Auth', 'action' => 'activate']);
-$router->add('auth/logout', ['controller' => 'Auth', 'action' => 'logout']);
-$router->add('language', ['controller' => 'Language', 'action' => 'change']);
+$router->add('/auth', ['controller' => 'Auth', 'action' => 'index']);
+$router->add('/auth/activate', ['controller' => 'Auth', 'action' => 'activate']);
+$router->add('/auth/logout', ['controller' => 'Auth', 'action' => 'logout']);
+$router->add('/language', ['controller' => 'Language', 'action' => 'change']);
 
 
 # English
@@ -42,5 +41,4 @@ $router->add('language', ['controller' => 'Language', 'action' => 'change']);
 //$router->add('ru/auth', ['controller' => 'Auth', 'action' => 'index']);
 //$router->add('ru/auth/activate', ['controller' => 'Auth', 'action' => 'activate']);
 //$router->add('ru/auth/logout', ['controller' => 'Auth', 'action' => 'logout']);
-
-$router->dispatch($_SERVER['QUERY_STRING']);
+$router->dispatch($_SERVER['REQUEST_URI']);
