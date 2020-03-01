@@ -5,14 +5,19 @@
       <sourceFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/Core" isTestSource="false" packagePrefix="Core\" />
       <sourceFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/App" isTestSource="false" packagePrefix="App\" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/container" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/database" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phar-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpdocumentor/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpdocumentor/type-resolver" />
-      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpmailer/phpmailer" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpspec/prophecy" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-code-coverage" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-file-iterator" />
@@ -20,6 +25,8 @@
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-timer" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-token-stream" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/code-unit-reverse-lookup" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/comparator" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/diff" />
@@ -33,6 +40,8 @@
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/version" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/symfony/polyfill-ctype" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/docker-nginx-php-mysql/web/vendor/webmozart/assert" />

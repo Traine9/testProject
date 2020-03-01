@@ -4,8 +4,6 @@ namespace Core;
 
 /**
  * Base controller
- *
- * PHP version 7.0
  */
 abstract class Controller
 {
@@ -34,10 +32,11 @@ abstract class Controller
      * filter methods on action methods. Action methods need to be named
      * with an "Action" suffix, e.g. indexAction, showAction etc.
      *
-     * @param string $name  Method name
+     * @param string $name Method name
      * @param array $args Arguments passed to the method
      *
      * @return void
+     * @throws \Exception
      */
     public function __call($name, $args)
     {
@@ -69,5 +68,23 @@ abstract class Controller
      */
     protected function after()
     {
+    }
+
+    /**
+     * Get argument or false
+     *
+     * @param string $name
+     * @param string $type
+     *
+     * @return bool|mixed
+     */
+    public function getArgumentSecure($name, $type = 'POST') {
+        $value = false;
+        if ($type == 'POST') {
+            $value = @$_POST[$name];
+        } elseif ($type == 'GET') {
+            $value = @$_GET[$name];
+        }
+        return $value;
     }
 }

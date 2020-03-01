@@ -12,12 +12,7 @@
             <div id="title" class="col s12">
                 <a href="/" class="brand-logo">  {{ title }} </a>
                 <ul id="header_menu" class="right hide-on-med-and-down">
-                    {% if language == 'en' %}
-                        <li> <a href="/"> Back </a></li>
-                    {% elseif language == 'ru' %}
-                        <li> <a href="/"> Назад </a></li>
-                    {% endif %}
-
+                    <li> <a href="/"> {{"Назад"|translate}} </a></li>
                 </ul>
             </div>
         </div>
@@ -26,216 +21,90 @@
 
 <div id="auth" class="container white z-depth-2">
     <ul class="tabs teal">
-        {% if language == 'ru' %}
-            <li class="tab col s3"><a class="white-text active" href="#login">Вход</a></li>
-            <li class="tab col s3"><a class="white-text" href="#register">Авторизация</a></li>
-        {% elseif language == 'en' %}
-        <li class="tab col s3"><a class="white-text active" href="#login">Login</a></li>
-        <li class="tab col s3"><a class="white-text" href="#register">Register</a></li>
-        {% endif %}
+        <li class="tab col s3"><a class="white-text {% if not register %} active {% endif %}" href="#login">{{ "Вход"|translate }}</a></li>
+        <li class="tab col s3"><a class="white-text {% if register %} active {% endif %}" href="#register">{{ "Регистрация"|translate }}</a></li>
     </ul>
 
-    {% if language == 'ru' %}
-        <div id="login" class="col s12">
-            <form class="col s12" method="POST" action="/auth">
-                <div class="form-container">
-                    {% if message %}
-                    <h4 class="teal-text">{{ message }}. <br> проверить электронную почту</h4>
-                    {% endif %}
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="login" required="required" id="email" type="email" class="validate">
-                            <label for="email">Электронная почта</label>
-                        </div>
+    <div id="login" class="col s12">
+        <form class="col s12" method="POST" action="/auth">
+            <div class="form-container">
+                {% if message %}
+                <h4 class="teal-text">{{ message|raw}}.</h4>
+                {% endif %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="login" required="required" id="email" type="email" class="validate">
+                        <label for="email">{{"Электронная почта"|translate}}</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="password" required="required" id="password" type="password" class="validate">
-                            <label for="password">Пароль</label>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="password" required="required" id="password" type="password" class="validate">
+                        <label for="password">{{"Пароль"|translate}}</label>
                     </div>
+                </div>
+                <br>
+                <div style="align-content: center">
+                    <button name="signIn" class="btn waves-effect waves-light teal" type="submit" value="1">{{"Вход"|translate}}</button>
                     <br>
-                    <center>
-                        <button name="Login" class="btn waves-effect waves-light teal" type="submit" name="action">Вход</button>
-                        <br>
-                        <br>
-                        <!--<a href="">Забыли пароль?</a>-->
-                    </center>
-                </div>
-            </form>
-        </div>
-    {% elseif language == 'en' %}
-        <div id="login" class="col s12">
-            <form class="col s12" method="POST" action="/auth">
-                <div class="form-container">
-                    {% if message %}
-                    <h4 class="teal-text">{{ message }}. <br> Check your eMail</h4>
-                    {% endif %}
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="login" required="required" id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="password" required="required" id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
                     <br>
-                    <center>
-                        <button name="Login" class="btn waves-effect waves-light teal" type="submit" name="action">Login</button>
-                        <br>
-                        <br>
-                        <!--<a href="">Forgotten password?</a>-->
-                    </center>
+                    <!--<a href="">Забыли пароль?</a>-->
                 </div>
-            </form>
-        </div>
-    {% else %}
-        <div id="login" class="col s12">
-            <form class="col s12" method="POST" action="/auth">
-                <div class="form-container">
-                    {% if message %}
-                    <h4 class="teal-text">{{ message }}. <br> Check your eMail</h4>
-                    {% endif %}
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="login" required="required" id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
+            </div>
+        </form>
+    </div>
+    <div id="register" class="col s12">
+        <form class="col s12" enctype="multipart/form-data" method="POST" action="/auth">
+            <div class="form-container">
+                {% if messageRegister %}
+                    <h4 class="teal-text">{{ messageRegister|raw}}.</h4>
+                {% endif %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="name" required="required" id="last_name" type="text" class="validate">
+                        <label for="name">{{"Имя"|translate}}</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="password" required="required" id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <br>
-                    <center>
-                        <button name="Login" class="btn waves-effect waves-light teal" type="submit" name="action">Login</button>
-                        <br>
-                        <br>
-                        <a href="">Forgotten password?</a>
-                    </center>
                 </div>
-            </form>
-        </div>
-    {% endif %}
-
-    {% if language == 'en' %}
-        <div id="register" class="col s12">
-            <form class="col s12" enctype="multipart/form-data" method="POST" action="/auth">
-                <div class="form-container">
-                    <!--<h3 class="teal-text">Welcome</h3>-->
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input name="First_Name" required="required" id="last_name" type="text" class="validate">
-                            <label for="last_name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input name="Last_Name" required="required" id="last_name" type="text" class="validate">
-                            <label for="last_name">Last Name</label>
-                        </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="email" required="required" id="email" type="email" class="validate">
+                        <label for="email">{{"Электронная почта"|translate}}</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="eMail" required="required" id="email" type="email" class="validate">
-                            <label for="email">Email</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="Password" required="required" id="password" type="password" class="validate">
-                            <label for="password">Password</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="Confirm_Password" required="required" id="password-confirm" type="password" class="validate">
-                            <label for="password-confirm">Password Confirmation</label>
-                        </div>
-                    </div>
-
-
-                    <div class="row" id="file">
-                        <div class="file_input_div">
-                            <div class="file_input">
-                                <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
-                                    <i class="material-icons">file_upload</i>
-                                    <input name="File" id="file_input_file" class="none" type="file" />
-                                </label>
-                            </div>
-                            <div id="file_input_text_div" class="mdl-textfield mdl-js-textfield textfield-demo">
-                                <input class="file_input_text mdl-textfield__input" type="text" disabled readonly id="file_input_text" />
-                                <label class="mdl-textfield__label" for="file_input_text"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <center>
-                        <button class="btn waves-effect waves-light teal" type="submit" name="Submit">Submit</button>
-                    </center>
                 </div>
-            </form>
-        </div>
-    {% elseif language == 'ru' %}
-        <div id="register" class="col s12">
-            <form class="col s12" enctype="multipart/form-data" method="POST" action="/auth">
-                <div class="form-container">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input name="First_Name" required="required" id="last_name" type="text" class="validate">
-                            <label for="last_name">Имя</label>
-                        </div>
-                        <div class="input-field col s6">
-                            <input name="Last_Name" required="required" id="last_name" type="text" class="validate">
-                            <label for="last_name">Фамилия</label>
-                        </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="Password" required="required" id="password" type="password" class="validate">
+                        <label for="password">{{"Пароль"|translate}}</label>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="eMail" required="required" id="email" type="email" class="validate">
-                            <label for="email">Электронная почта</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="Password" required="required" id="password" type="password" class="validate">
-                            <label for="password">Пароль</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input name="Confirm_Password" required="required" id="password-confirm" type="password" class="validate">
-                            <label for="password-confirm">Подтверждение Пароля</label>
-                        </div>
-                    </div>
-
-
-                    <div class="row" id="file">
-                        <div class="file_input_div">
-                            <div class="file_input">
-                                <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
-                                    <i class="material-icons">file_upload</i>
-                                    <input name="File" id="file_input_file" class="none" type="file" />
-                                </label>
-                            </div>
-                            <div id="file_input_text_div" class="mdl-textfield mdl-js-textfield textfield-demo">
-                                <input class="file_input_text mdl-textfield__input" type="text" disabled readonly id="file_input_text" />
-                                <label class="mdl-textfield__label" for="file_input_text"></label>
-                            </div>
-                        </div>
-                    </div>
-                    <center>
-                        <button class="btn waves-effect waves-light teal" type="submit" name="Submit">Регистрироваться</button>
-                    </center>
                 </div>
-            </form>
-        </div>
-    {% endif %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input name="Confirm_Password" required="required" id="password-confirm" type="password" class="validate">
+                        <label for="password-confirm">{{"Подтверждение Пароля"|translate}}</label>
+                    </div>
+                </div>
 
 
+                <div class="row" id="file">
+                    <div class="file_input_div">
+                        <div class="file_input">
+                            <label class="image_input_button mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect mdl-button--colored">
+                                <i class="material-icons">file_upload</i>
+                                <input name="File" id="file_input_file" class="none" type="file" />
+                            </label>
+                        </div>
+                        <div id="file_input_text_div" class="mdl-textfield mdl-js-textfield textfield-demo">
+                            <input class="file_input_text mdl-textfield__input" type="text" disabled readonly id="file_input_text" />
+                            <label class="mdl-textfield__label" for="file_input_text"></label>
+                        </div>
+                    </div>
+                </div>
+                <div style="align-content: center">
+                    <button class="btn waves-effect waves-light teal" type="submit" name="Submit" value="1">{{"Зарегистрироваться"|translate}}</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 

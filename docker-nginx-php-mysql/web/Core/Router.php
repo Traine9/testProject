@@ -2,13 +2,18 @@
 
 namespace Core;
 
+use App\Services\AuthService;
+
 /**
  * Router
- *
- * PHP version 7.0
  */
 class Router
 {
+    public function __construct()
+    {
+        //чтобы не городить middle ware ради одной строчки делаем тут
+        AuthService::Get()->auth();
+    }
 
     /**
      * Associative array of routes (the routing table)
@@ -92,7 +97,7 @@ class Router
     public function getParams()
     {
         return $this->params;
-    }
+    }/** @noinspection PhpDocMissingThrowsInspection */
 
     /**
      * Dispatch the route, creating the controller object and running the
@@ -211,4 +216,18 @@ class Router
 
         return $namespace;
     }
+
+    /**
+     * Get the router
+     *
+     * @return Router
+     */
+    public static function Get() {
+        if (!self::$_Instance) {
+            self::$_Instance = new self();
+        }
+        return self::$_Instance;
+    }
+
+    private static $_Instance;
 }

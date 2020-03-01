@@ -14,7 +14,6 @@
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpmailer/phpmailer" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/sebastian/recursion-context" />
@@ -34,6 +33,16 @@
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/docker-nginx-php-mysql/web/vendor/illuminate/container" />
     </include_path>
   </component>
   <component name="PhpUnit">

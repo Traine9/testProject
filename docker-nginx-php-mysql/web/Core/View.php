@@ -2,10 +2,10 @@
 
 namespace Core;
 
+use App\Services\TranslateService;
+
 /**
  * View
- *
- * PHP version 7.0
  */
 class View
 {
@@ -13,10 +13,11 @@ class View
     /**
      * Render a view file
      *
-     * @param string $view  The view file
-     * @param array $args  Associative array of data to display in the view (optional)
+     * @param string $view The view file
+     * @param array $args Associative array of data to display in the view (optional)
      *
      * @return void
+     * @throws \Exception
      */
     public static function render($view, $args = [])
     {
@@ -44,8 +45,12 @@ class View
         static $twig = null;
 
         if ($twig === null) {
-            $loader = new \Twig_Loader_Filesystem(dirname(__DIR__) . '/App/Views');
-            $twig = new \Twig_Environment($loader);
+            $loader = new \Twig\Loader\FilesystemLoader(dirname(__DIR__) . '/App/Views');
+            $twig = new \Twig\Environment($loader);
+            $function = new \Twig\TwigFilter('translate', function ($key) {
+                echo \App\Services\TranslateService::Get()->getTranslateSecure($key);
+            });
+            $twig->addFilter($function);
         }
 
         echo $twig->render($template, $args);

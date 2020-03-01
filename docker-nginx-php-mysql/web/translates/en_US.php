@@ -1,0 +1,23 @@
+<?php
+return [
+    'Вход' => 'Login',
+    'Выход' => 'Logout',
+    'Регистрация' => 'Register',
+    'Электронная почта' => 'Email',
+    'Имя' => 'First Name',
+    'Фамилия' => 'Last Name',
+    'Подтверждение Пароля' => 'Password Confirmation',
+    'Зарегистрироваться' => 'Sign up',
+    'Назад' => 'Back',
+    'Домашняя Страница' => 'Home',
+    'Вы не авторизованы' => 'You aren\'t auth',
+    'Авторизация' => 'Auth',
+    'Неправильный логин или пароль' => 'Wrong login or password',
+    'Некоректный email' => 'Incorrect email',
+    'Минимальная длина пароля 8 символов' => 'Password must contain 8 or more characters',
+    'Разрешено загружать только файлы форматов jpg, gif, png' => 'Only jpg, gif, png files are allowed.',
+    'Пользователь с таким email уже сущетсвует' => 'User with this email already exists',
+    'Имя не должно содержать спецсимволов, цифр' => 'Name can not contain numbers, special characters',
+    'Пароли не совпадают' => 'Passwords are not equal',
+    'Добро пожаловать' => 'Welcome',
+];
