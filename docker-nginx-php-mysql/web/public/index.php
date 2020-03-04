@@ -8,6 +8,8 @@ require $dir . '/vendor/autoload.php';
 require $dir . '/bootstrap/database.php';
 //make routes
 require $dir . '/bootstrap/routes.php';
+
+//@TODO make migrations with command like artiisan
 //require __DIR__.'/../migrations/users.php';
 
 //Error and Exception handling

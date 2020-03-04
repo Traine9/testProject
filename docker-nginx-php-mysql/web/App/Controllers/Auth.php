@@ -31,7 +31,8 @@ class Auth extends Controller
             if ($data['messageRegister'] = $this->registerAction()) {
                 $data['register'] = true;
             } else {
-                Header('Location /', true, 301);
+                header('Location /', true, 301);
+                exit();
             }
 
         } elseif ($this->getArgumentSecure('signIn')) {
@@ -77,6 +78,8 @@ class Auth extends Controller
             );
         }
         $upload_file = false;
+
+        //@TODO incapsulate files to getArgument function
         if ($_FILES['File']['name']) {
 
             $file_type = $_FILES['File']['type']; //returns the mimetype
@@ -96,8 +99,6 @@ class Auth extends Controller
             try {
                 //@TODO move register to UserService
                 $user = new User();
-
-
                 $user->name = $name;
                 $user->password = AuthService::Get()->createPasswordHash($password);
                 $user->email = $email;

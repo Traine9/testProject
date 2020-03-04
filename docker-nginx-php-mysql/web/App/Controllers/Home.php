@@ -20,8 +20,14 @@ class Home extends \Core\Controller
     public function indexAction()
     {
         $cuser = AuthService::Get()->getUser();
+        $userDataArray = [];
         if ($cuser) {
-            $message = TranslateService::Get()->getTranslateSecure('Welcome') . ' ' . $cuser->name;
+            $userDataArray = [
+                'image' => $cuser->image,
+                'name' => $cuser->name,
+                'email' => $cuser->email
+            ];
+            $message = TranslateService::Get()->getTranslateSecure('Добро пожаловать') . ' ' . $cuser->name;
         } else {
             $message = TranslateService::Get()->getTranslateSecure('Вы не авторизованы');
         }
@@ -29,8 +35,9 @@ class Home extends \Core\Controller
             'title' => TranslateService::Get()->getTranslateSecure('Домашняя Страница'),
             'message' => $message,
             'language' => @$_SESSION['Language'],
-            'auth' => boolval($cuser)
+            'auth' => boolval($cuser),
         ];
+        $data = array_merge($data, $userDataArray);
         View::renderTemplate('home.html', $data);
     }
 }
