@@ -52,7 +52,7 @@ class TranslateService
         if ($translate) {
             $this->_translateArray = $translate;
         } else {
-            $this->_translateArray = array();
+            $this->_translateArray = [];
         }
     }
 

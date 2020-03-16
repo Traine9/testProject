@@ -32,7 +32,7 @@ class Auth extends Controller
             if ($data['messageRegister'] = $this->registerAction()) {
                 $data['register'] = true;
             } else {
-                header('Location /', true, 301);
+                header('Location: /', true, 301);
                 exit();
             }
 
@@ -85,7 +85,7 @@ class Auth extends Controller
 
             $file_type = $_FILES['File']['type']; //returns the mimetype
 
-            $allowed = array("image/jpeg", "image/gif", "image/png");
+            $allowed = ["image/jpeg", "image/gif", "image/png"];
             if (!in_array($file_type, $allowed)) {
                 $errorArray[] = TranslateService::Get()->getTranslateSecure(
                     'Разрешено загружать только файлы форматов jpg, gif, png'

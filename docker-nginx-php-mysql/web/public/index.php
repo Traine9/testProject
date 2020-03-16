@@ -5,7 +5,7 @@ $dir = dirname(__DIR__);
 //include composer
 require $dir . '/vendor/autoload.php';
 //connect database
-require $dir . '/bootstrap/database.php';
+require_once $dir . '/bootstrap/database.php';
 //make routes
 require $dir . '/bootstrap/routes.php';
 

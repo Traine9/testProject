@@ -18,18 +18,27 @@ class UserService
         $user = new User();
         $fields = $user->getFieldKeys();
         $db = getConnection();
+
+        //prepare query
         $query = "SELECT * FROM `users` WHERE ";
+        $queryArray = [];
         foreach ($whereArray as $key => $value) {
-            $query .= " `$key` = :$key";
+            $queryArray[] .= "`$key` = :$key ";
         }
+        $query .= implode(' AND ', $queryArray);
         $query .= ' LIMIT 1';
+
+        //bind params
         $query = $db->prepare($query);
-        foreach ($whereArray as $key => $value) {
+        foreach ($whereArray as $key => &$value) {
             $query->bindParam(":$key", $value);
         }
+
+        //execute
         $query->execute();
         $result = $query->fetch();
 
+        //map result with model
         if ($result) {
             foreach ($result as $key => $value) {
                 if (in_array($key, $fields)) {
@@ -54,8 +63,7 @@ class UserService
         $fields = $user->getFieldKeys();
         $db = getConnection();
 
-        $bindParamsArray = array();
-        print_r($user);
+        $bindParamsArray = [];
         foreach ($fields as $key => $field) {
             if (isset($user->{$field})) {
                 $bindParamsArray[":$field"] = $user->{$field};
@@ -63,13 +71,12 @@ class UserService
                 unset($fields[$key]);
             }
         }
-        $query = "INSERT INTO `users` (". implode(', ', $fields) . " 
-        VALUES (".implode(', ', array_keys($bindParamsArray)).")";
+        $query = "INSERT INTO `users` (" . implode(', ', $fields)
+            . ") VALUES (" . implode(', ', array_keys($bindParamsArray)) . ")";
 
         $query = $db->prepare($query);
 
         $result = $query->execute($bindParamsArray);
-        var_dump($query->errorInfo());
         if ($result === false) {
             throw new \Exception();
         }
