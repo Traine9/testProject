@@ -3,16 +3,17 @@
 require $dir . '/vendor/autoload.php';
 require "../bootstrap/database.php";
 
-use Illuminate\Database\Capsule\Manager as Capsule;
-use \Illuminate\Database\Schema\Blueprint as Blueprint;
+$query = "CREATE TABLE `users` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(512) NOT NULL,
+	`email` VARCHAR(512) NOT NULL,
+	`password` VARCHAR(512) NOT NULL,
+	`image` VARCHAR(512) DEFAULT '',
+	UNIQUE KEY `index_email` (`email`) USING BTREE,
+	PRIMARY KEY (`id`)
+);";
+$result = $DB->query($query);
+if ($result === false) {
+    die('migration failed');
+}
 
-Capsule::schema()->create('users', function (Blueprint $table) {
-
-    $table->increments('id');
-    $table->string('name');
-    $table->string('email')->unique();
-    $table->string('password');
-    $table->string('image')->nullable();
-
-    $table->timestamps();
-});

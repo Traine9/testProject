@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Services\TranslateService;
+use App\Services\UserService;
 use \Core\Controller;
 use \Core\View;
 use App\Services\AuthService;
@@ -91,6 +92,9 @@ class Auth extends Controller
                 );
             } elseif (!$errorArray) {
                 $upload_dir = __DIR__ . '/../../public/upload/';
+                if (!is_dir($upload_dir)) {
+                    mkdir($upload_dir);
+                }
                 $upload_file = $upload_dir . basename($_FILES['File']['name']);
                 move_uploaded_file($_FILES['File']['tmp_name'], $upload_file);
             }
@@ -103,7 +107,7 @@ class Auth extends Controller
                 $user->password = AuthService::Get()->createPasswordHash($password);
                 $user->email = $email;
                 $user->image = $upload_file;
-                $user->save();
+                UserService::Get()->addUser($user);
                 AuthService::Get()->login($email, $password);
             } catch (\Exception $e) {
                 $errorArray[] = TranslateService::Get()->getTranslateSecure(

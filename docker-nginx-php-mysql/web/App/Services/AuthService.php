@@ -3,8 +3,6 @@
 
 namespace App\Services;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model as Eloquent;
 use \App\Models\User;
 
 class AuthService
@@ -22,12 +20,12 @@ class AuthService
     public function login($email, $password, $isHash = false) {
         //@TODO brutforce defence
         if (!$isHash) {
-            $user = User::query()->where(['email' => $email])->first();
-            if (!password_verify($password, $user->password)) {
+            $user = UserService::Get()->getUserByWhere(['email' => $email]);
+            if (!$user || !password_verify($password, $user->password)) {
                 $user = false;
             }
         } else {
-            $user = User::query()->where(['email' => $email, 'password' => $password])->first();
+            $user = UserService::Get()->getUserByWhere(['email' => $email, 'password' => $password]);
         }
 
 
@@ -43,7 +41,7 @@ class AuthService
     /**
      * Get current user
      *
-     * @return Builder|Eloquent|object|null*
+     * @return User|false
      */
     public function getUser() {
         return $this->_user;

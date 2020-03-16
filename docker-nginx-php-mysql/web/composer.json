@@ -2,7 +2,6 @@
     "require": {
       "twig/twig": "~2.0",
       "ext-pdo": "*",
-      "illuminate/database": "*",
       "symfony/translation": "*"
     },
     "require-dev": {

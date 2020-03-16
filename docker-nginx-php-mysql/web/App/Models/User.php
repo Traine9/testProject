@@ -1,10 +1,7 @@
 <?php
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model as Eloquent;
-
-class User extends Eloquent
+class User
 {
     protected $table = 'users';
     protected $primaryKey = 'id';
@@ -15,17 +12,12 @@ class User extends Eloquent
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password','image'
+    private $_fields = [
+        'id', 'name', 'email', 'password','image'
     ];
 
+    function getFieldKeys() {
+        return $this->_fields;
+    }
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password'
-    ];
 }

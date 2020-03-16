@@ -1,19 +1,12 @@
 <?php
+$DB = new PDO("mysql:host={$_ENV['MYSQL_HOST']};dbname=test;charset=UTF8", $_ENV['MYSQL_USER'], $_ENV['MYSQL_PASSWORD']);
 
-use Illuminate\Database\Capsule\Manager as Capsule;
-
-$capsule = new Capsule;
-
-$capsule->addConnection([
-    "driver" => "mysql",
-    "host" => $_ENV['MYSQL_HOST'],
-    "database" => 'test',
-    "username" => $_ENV['MYSQL_USER'],
-    "password" => $_ENV['MYSQL_PASSWORD']
-]);
-
-//Make this Capsule instance available globally.
-$capsule->setAsGlobal();
-
-// Setup the Eloquent ORM.
-$capsule->bootEloquent();
+/**
+ * Get connection
+ *
+ * @return PDO
+ */
+function getConnection() {
+    global $DB;
+    return $DB;
+}
