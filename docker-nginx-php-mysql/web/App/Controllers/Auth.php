@@ -92,9 +92,6 @@ class Auth extends Controller
                 );
             } elseif (!$errorArray) {
                 $upload_dir = __DIR__ . '/../../public/upload/';
-                if (!is_dir($upload_dir)) {
-                    mkdir($upload_dir);
-                }
                 $upload_file = $upload_dir . basename($_FILES['File']['name']);
                 move_uploaded_file($_FILES['File']['tmp_name'], $upload_file);
             }
